@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[UsersProfiles](
+	[Id] [int] NOT NULL,
+	[UserStatusId] [int] NOT NULL,
+	[UserLastStatusId] [int] NOT NULL,
+	[Status] nvarchar(50) NULL
+ CONSTRAINT [PK_UsersProfile] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[UsersProfiles] ADD  CONSTRAINT [DF_UsersProfiles_UserLastStatusId]  DEFAULT ((2)) FOR [UserLastStatusId]
+GO

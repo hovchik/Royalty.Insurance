@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Royalty.Insurance.BusinessLayer</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CabMarketing\Mapper\**" />
+    <EmbeddedResource Remove="CabMarketing\Mapper\**" />
+    <None Remove="CabMarketing\Mapper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.1.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.1.0" />
+    <PackageReference Include="CsvHelper.Excel.Core" Version="22.1.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.12.3" />
+    <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="Humanizer.Core" Version="2.11.10" />
+    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="5.0.22" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="ServiceStack.Text.Core" Version="5.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Core.System.Delta\Core.System.Delta.csproj" />
+    <ProjectReference Include="..\Core.System.DocumentManagement\Core.System.DocumentManagement.csproj" />
+    <ProjectReference Include="..\Core.System.MicrosoftGraph\Core.System.MicrosoftGraph.csproj" />
+    <ProjectReference Include="..\Core.System.Security\Core.System.Security.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Royalty.Insurance.MapperService\Royalty.Insurance.MapperService.csproj" />
+    <ProjectReference Include="..\Royalty.Insurance.Proxy\Royalty.Insurance.Proxy.csproj" />
+    <ProjectReference Include="..\System.Common\System.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Account\Queries\" />
+    <Folder Include="Delta\Queries\" />
+    <Folder Include="Users\Mapper\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[PhoneBook](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[PhoneNumber] [nvarchar](50) NOT NULL,
+	[UserId] [int] NOT NULL,
+ CONSTRAINT [PK_PhoneBook] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PhoneBook] ADD  CONSTRAINT [FK_PhoneBook_Users] FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+
+ALTER TABLE [dbo].[PhoneBook] CHECK CONSTRAINT [FK_PhoneBook_Users]
+GO
+

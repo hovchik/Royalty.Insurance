@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RoyaltyInsuranceDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{75587b3a-149b-4c39-88b7-eb0ddda6c114}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RoyaltyInsuranceDatabase</RootNamespace>
+    <AssemblyName>RoyaltyInsuranceDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Coverages.sql" />
+    <Build Include="Tables\UserActivityLogs.sql" />
+    <Build Include="Tables\LossInformation.sql" />
+    <Build Include="Tables\DriverInformation.sql" />
+    <Build Include="Tables\Cargo.sql" />
+    <Build Include="Tables\Commodity.sql" />
+    <Build Include="Tables\CargoCommodity.sql" />
+    <Build Include="Tables\UserPhones.sql" />
+    <Build Include="Tables\CallTypes.sql" />
+    <Build Include="Tables\UserPhoneCallHistory.sql" />
+    <Build Include="Tables\UserTrustedDevices.sql" />
+    <Build Include="Tables\Roles.sql" />
+    <Build Include="Tables\UserGarage.sql" />
+    <Build Include="Tables\Attachments.sql" />
+    <Build Include="Tables\MessageAttachments.sql" />
+    <Build Include="Tables\PhoneBook.sql" />
+    <Build Include="Tables\Documents.sql" />
+    <Build Include="Tables\AgentTaskStatuses.sql" />
+    <Build Include="Tables\AgentTasks.sql" />
+    <Build Include="Tables\AgentTaskTypes.sql" />
+    <Build Include="Tables\InsuredStatuses.sql" />
+    <Build Include="Tables\SavedMarketingRequests.sql" />
+    <Build Include="Tables\BasicAlert.sql" />
+    <Build Include="Tables\LocationType.sql" />
+    <Build Include="Tables\Gvwr.sql" />
+    <Build Include="Tables\OperationType.sql" />
+    <Build Include="Tables\CommonAuthTypes.sql" />
+    <Build Include="Tables\FileFormats.sql" />
+    <Build Include="Tables\AgaveSalesHistory.sql" />
+    <Build Include="Tables\AgaveTransactionType.sql" />
+    <Build Include="Tables\AchTypes.sql" />
+    <Build Include="Tables\CoverageTypes.sql" />
+    <Build Include="Tables\DocumentType.sql" />
+    <Build Include="Tables\Notes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Agencies.sql" />
+    <Build Include="Tables\_DatabaseVersion.sql" />
+    <Build Include="Tables\Cities.sql" />
+    <Build Include="Tables\LegalStatuses.sql" />
+    <Build Include="Tables\States.sql" />
+    <Build Include="Tables\ZipCodes.sql" />
+    <Build Include="Tables\Insureds.sql" />
+    <Build Include="Tables\GroupMembers.sql" />
+    <Build Include="Tables\Groups.sql" />
+    <Build Include="Tables\Messages.sql" />
+    <Build Include="Tables\UnreadMessages.sql" />
+    <Build Include="Tables\UsersProfiles.sql" />
+    <Build Include="Tables\UserStatus.sql" />
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\VehicleInfo.sql" />
+    <Build Include="Tables\InsuredVehicle.sql" />
+    <Build Include="Tables\InsuredCoverages.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeploy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RoyaltyInsuranceDatabase.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="RoyaltyInsuranceDatabase.refactorlog" />
+  </ItemGroup>
+</Project>

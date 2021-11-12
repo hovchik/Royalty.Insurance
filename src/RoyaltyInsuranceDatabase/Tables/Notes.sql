@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[Notes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Description] [nvarchar](1024) NOT NULL,
+	[InsuredId] [int] NULL,
+	[CreateDateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_Notes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Notes] ADD  CONSTRAINT [DF_Notes_CreateDateTime]  DEFAULT (getutcdate()) FOR [CreateDateTime]
+GO
+
+ALTER TABLE [dbo].[Notes] ADD  CONSTRAINT [FK_Notes_Users] FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+
+ALTER TABLE [dbo].[Notes] CHECK CONSTRAINT [FK_Notes_Users]
+GO

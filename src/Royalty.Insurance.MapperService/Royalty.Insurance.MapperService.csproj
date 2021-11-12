@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="StateProxyService\**" />
+    <EmbeddedResource Remove="StateProxyService\**" />
+    <None Remove="StateProxyService\**" />
+  </ItemGroup>
+	<ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Royalty.Insurance.Proxy\Royalty.Insurance.Proxy.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+	  <Folder Include="BaseProxyService\" />
+	  <Folder Include="UserProxyService\" />
+	</ItemGroup>
+</Project>
