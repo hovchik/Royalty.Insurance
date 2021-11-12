@@ -5,7 +5,7 @@
     <TargetDatabaseName>RoyaltyInsurance</TargetDatabaseName>
     <DeployScriptFileName>RoyaltyInsuranceDatabase.sql</DeployScriptFileName>
     <ProfileVersionNumber>1</ProfileVersionNumber>
-    <TargetConnectionString>Data Source=.;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False</TargetConnectionString>
+    <TargetConnectionString>Data Source=.\sql2019;Persist Security Info=True;User ID=sa;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False</TargetConnectionString>
     <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
     <DatabaseEdition>Basic</DatabaseEdition>
     <DatabaseServiceObjective>Basic</DatabaseServiceObjective>
